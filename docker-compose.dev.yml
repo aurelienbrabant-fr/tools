@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  
+  client:
+    build:
+      context: client
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./client:/usr/app
+    ports:
+      - 3000:3000
+
+  server:
+    build:
+      context: server
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./server:/usr/app
+    ports:
+      - 5000:5000
+    environment:
+      - NESTJS_PORT=5000
