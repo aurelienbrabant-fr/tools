@@ -1,7 +1,7 @@
 CLIENT_GIT	:= git@github.com:aurelienbrabant-fr/client.git
 SERVER_GIT	:= git@github.com:aurelienbrabant-fr/server.git
 
-COMPOSE_DEV	= docker-compose -f docker-compose.dev.yml
+COMPOSE_DEV	= docker-compose -f docker-compose.dev.yml --env-file .dev.env
 
 all:
 	@printf "Usage: make [dev-start | dev-stop]\n"
